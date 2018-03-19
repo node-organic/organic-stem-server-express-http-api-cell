@@ -1,11 +1,11 @@
-# organic-stem-server-http-api-cell
+# organic-stem-server-http-api-cell-template
 
-a stack upgrade for organic-stem with http api cells
+a stack upgrade for organic-stem with http api cell
 
 ## usage
 
 ```
-$ mkdir ./my-stack-upgrade
-$ cd ./my-stack-upgarde
-$ npx organic-stem-server-http-api-cell
+$ mkdir ./myStem
+$ cd ./myStem
+$ npx organic-stem-server-http-api-cell-template
 ```

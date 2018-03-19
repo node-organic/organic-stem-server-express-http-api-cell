@@ -1,12 +1,12 @@
 {
-  "name": "organic-stem-server-http-api-cell",
-  "description": "a stack upgrade for organic-stem with http api cells",
+  "name": "organic-stem-server-http-api-cell-template",
+  "description": "a stack upgrade for organic-stem with http api cell",
   "version": "1.0.0",
   "bin": {
-    "organic-stem-server-http-api-cell": "./index.js"
+    "organic-stem-server-http-api-cell-template": "./index.js"
   },
   "dependencies": {
-    "organic-stem-stack-upgrade": "node-organic/organic-stem-stack-upgrade"
+    "organic-stack-upgrade": "github:node-organic/organic-stack-upgrade"
   },
   "devDependencies": {
     "eslint": "^4.18.2",
@@ -15,5 +15,19 @@
     "eslint-plugin-node": "^6.0.1",
     "eslint-plugin-promise": "^3.7.0",
     "eslint-plugin-standard": "^3.0.1"
-  }
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/node-organic/organic-stem-server-express-http-api-cell-template.git"
+  },
+  "author": "Boris Filipov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/node-organic/organic-stem-server-express-http-api-cell-template/issues"
+  },
+  "homepage": "https://github.com/node-organic/organic-stem-server-express-http-api-cell-template#readme"
 }

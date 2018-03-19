@@ -1,21 +1,25 @@
 #!/usr/bin/env node
-const stack = require('organic-stem-stack-upgrade')
+
+const StackUpgrade = require('organic-stack-upgrade')
 const path = require('path')
 const exec = require('util').promisify(require('child_process').exec)
-stack.applyStackUpgrade({
-  sourceDir: path.join(__dirname, 'core'),
-  destDir: process.cwd()
+
+const execute = async function () {
+  let stack = new StackUpgrade({
+    destDir: process.cwd(),
+    name: 'organic-stem-server-http-api-cell-template',
+    version: '1.0.0'
+  })
+  await stack.configureMergeAndUpdateJSON({
+    sourceDir: path.join(__dirname, 'core')
+  })
+  console.info('run npm install...')
+  let npmOutput = await exec('npm install')
+  console.info(npmOutput.stdout)
+  console.error(npmOutput.stderr)
+}
+
+execute().catch((err) => {
+  console.error(err)
+  process.exit(1)
 })
-  .then(() => stack.configureStackUpgrade({sourceDir: process.cwd()}))
-  .then(() => {
-    console.log('running npm install...')
-    return exec('npm install')
-  })
-  .then((npmOutput) => {
-    console.log(npmOutput.stdout)
-    console.error(npmOutput.stderr)
-  })
-  .catch(err => {
-    console.error(err)
-    process.exit(1)
-  })
