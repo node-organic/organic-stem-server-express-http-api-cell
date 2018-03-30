@@ -1,0 +1,13 @@
+{
+  "name": "{{{cell-name}}}",
+  "version": "1.0.0",
+  "dependencies": {
+    "express": "4.16.3",
+    "body-parser": "1.18.2",
+    "cookie-parser": "1.4.3",
+    "method-override": "2.3.10",
+    "organic-express-routes": "1.0.0",
+    "organic-express-server": "0.1.0",
+    "organic-stem-cell": "node-organic/organic-stem-cell"
+  }
+}

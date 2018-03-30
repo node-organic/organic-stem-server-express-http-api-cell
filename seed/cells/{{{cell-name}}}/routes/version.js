@@ -1,8 +1,7 @@
-const path = require('path')
 module.exports = function (plasma, dna, helpers) {
   return {
     'GET': async function (req, res) {
-      res.body = require(path.join(process.cwd(), 'package.json')).version
+      res.body = res.locals.packagejson.version
     },
     'POST': helpers.forbidden,
     'PUT': helpers.forbidden,

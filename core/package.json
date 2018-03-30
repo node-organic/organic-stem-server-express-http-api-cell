@@ -1,9 +1,0 @@
-{
-  "dependencies": {
-    "organic-bunyan-output": "0.0.4",
-    "organic-console": "0.0.2",
-    "organic-express-response": "0.0.3",
-    "organic-express-routes": "^0.1.1",
-    "organic-express-server": "0.0.2"
-  }
-}

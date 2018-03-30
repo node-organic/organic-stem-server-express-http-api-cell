@@ -39,7 +39,7 @@ module.exports = function ExpressApp (plasma, dna, next) {
     })
   }
 
-  plasma.on(dna.expressSetupDoneOnce, function () {
+  plasma.on(dna.mountRespondersOn, function () {
     dna.responders.forEach(function (responderPath) {
       require(path.join(process.cwd(), responderPath))(app, dna)
     })
