@@ -1,12 +1,12 @@
 {
-  "name": "organic-stem-server-http-api-cell-template",
+  "name": "organic-stem-server-express-http-api-cell-template",
   "description": "a stack upgrade for organic-stem with http api cell",
   "version": "1.0.0",
   "bin": {
-    "organic-stem-server-http-api-cell-template": "./index.js"
+    "organic-stem-server-express-http-api-cell-template": "./index.js"
   },
   "dependencies": {
-    "organic-stack-upgrade": "node-organic/organic-stack-upgrade"
+    "organic-stack-upgrade": "1.1.0"
   },
   "devDependencies": {
     "async-request": "^1.2.0",
