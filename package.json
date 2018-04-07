@@ -6,7 +6,7 @@
     "organic-stem-server-express-http-api-cell-template": "./index.js"
   },
   "dependencies": {
-    "organic-stack-upgrade": "1.1.0"
+    "organic-stack-upgrade": "1.1.1"
   },
   "devDependencies": {
     "async-request": "^1.2.0",
