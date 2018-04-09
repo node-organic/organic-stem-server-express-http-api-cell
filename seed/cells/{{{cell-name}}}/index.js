@@ -1,11 +1,13 @@
 const CELL_MODE = process.argv[2]
-
-const path = require('path')
 const Cell = require('organic-stem-cell')
+const path = require('path')
 
 let cellInstance = new Cell({
-  dnaSourcePath: path.resolve(__dirname, '../../dna'),
-  cellBranch: 'cells.{{{cell-name}}}.build',
-  cellRoot: __dirname
+  dnaSourcePaths: [
+    path.resolve(__dirname, '../../dna'),
+    path.resolve(__dirname, './dna')
+  ],
+  buildBranch: 'build',
+  cellRoot: process.cwd()
 })
 cellInstance.start(CELL_MODE)

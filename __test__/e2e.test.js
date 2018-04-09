@@ -21,15 +21,16 @@ test('stack upgrade', async () => {
     destDir: tempDir,
     answers: {
       'cell-name': 'test',
-      'cell-port': 13371
+      'cell-port': 13371,
+      'cell-group': 'default'
     }
   })
 })
 
 test('the cell works', async () => {
   let cmds = [
-    'cd ' + tempDir,
-    'node ./cells/test'
+    'cd ' + tempDir + '/cells/test',
+    'node ./index'
   ]
   let child = execa.shell(cmds.join(' && '))
   child.stdout.pipe(process.stdout)

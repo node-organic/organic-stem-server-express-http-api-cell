@@ -3,8 +3,8 @@
     "source": "organic-express-routes",
     "reactOn": ["ExpressServer"],
     "pattern": "/**/*.js",
-    "path": "cells/{{{cell-name}}}/routes",
-    "helpers": "cells/{{{cell-name}}}/route-helpers",
+    "path": "routes",
+    "helpers": "route-helpers",
     "emitReady": "ApiRoutesReady"
   },
   "organic-express-server": {
@@ -12,10 +12,10 @@
     "forceConnectionsDestroyOnClose": true,
     "port": "@cell-ports.{{{cell-name}}}",
     "emitReady": "ExpressServer",
-    "initScript": "cells/{{{cell-name}}}/init-express-app.js",
+    "initScript": "init-express-app.js",
 
-    "interceptors": ["cells/{{{cell-name}}}/interceptors/packagejson"],
-    "responders": ["cells/{{{cell-name}}}/responders/default"],
+    "interceptors": ["interceptors/packagejson"],
+    "responders": ["responders/default"],
     "views": false,
     "uploadsDir": false,
     "cookie_secret": false,
