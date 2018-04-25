@@ -22,7 +22,8 @@ test('stack upgrade', async () => {
     answers: {
       'cell-name': 'test',
       'cell-port': 13371,
-      'cell-groups': 'default, group2'
+      'cell-groups': 'default, group2',
+      'cell-mount-point': '/'
     }
   })
 })
