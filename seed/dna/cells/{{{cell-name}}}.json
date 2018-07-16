@@ -1,4 +1,30 @@
 {
   "groups": {{{cell-groups}}},
-  "mountPoint": "{{{cell-mount-point}}}"
+  "build": {
+    "organic-api-routes": {
+      "source": "organic-express-routes",
+      "reactOn": ["ExpressServer"],
+      "pattern": "/**/*.js",
+      "path": "routes",
+      "helpers": "route-helpers",
+      "emitReady": "ApiRoutesReady"
+    },
+    "organic-express-server": {
+      "source": "organic-express-server",
+      "forceConnectionsDestroyOnClose": true,
+      "port": "@cell-ports.{{{cell-name}}}",
+      "emitReady": "ExpressServer",
+      "initScript": "init-express-app.js",
+
+      "interceptors": ["interceptors/packagejson"],
+      "responders": ["responders/default"],
+      "views": false,
+      "uploadsDir": false,
+      "cookie_secret": false,
+      "mountRespondersOn": [
+        "ExpressServer",
+        "ApiRoutesReady"
+      ]
+    }
+  }
 }
