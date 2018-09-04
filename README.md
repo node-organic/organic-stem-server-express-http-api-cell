@@ -7,5 +7,5 @@ a stack upgrade for organic-stem with http api cell
 ```
 $ mkdir ./myProject
 $ cd ./myProject
-$ npx organic-stem-server-http-api-cell-template
+$ npx node-organic/organic-stem-server-http-api-cell-template
 ```
