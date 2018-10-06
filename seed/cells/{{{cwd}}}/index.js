@@ -3,7 +3,11 @@ const Cell = require('organic-stem-cell')
 
 let cellInstance = new Cell({
   dnaSourcePaths: [require('lib/full-dna-path')],
-  buildBranch: 'cells.{{{dna-cell-path}}}.{{{cell-name}}}.build',
+  buildBranch: '{{{build-branch}}}',
   cellRoot: __dirname
 })
-cellInstance.start(CELL_MODE)
+if (module.parent) {
+  module.exports = cellInstance
+} else {
+  cellInstance.start(CELL_MODE)
+}

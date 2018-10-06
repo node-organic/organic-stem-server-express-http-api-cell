@@ -19,7 +19,11 @@ const execute = async function ({destDir = process.cwd(), answers}) {
     resulted_answers['cwd'] = await stack.ask(`cwd? (relative to ${destDir}/cells/)`, resulted_answers['cell-name'])
   }
   resulted_answers['dnaCellDirPath'] = path.dirname(resulted_answers['cwd'])
-  resulted_answers['dna-cell-path'] = resulted_answers['dnaCellDirPath'].split('/').join('.')
+  if (resulted_answers['dnaCellDirPath'] && resulted_answers['dnaCellDirPath'] !== '.') {
+    resulted_answers['build-branch'] = `cells.${resulted_answers['dnaCellDirPath'].split('/').join('.')}.${resulted_answers['cell-name']}.build`
+  } else {
+    resulted_answers['build-branch'] = `cells.${resulted_answers['cell-name']}.build`
+  }
   if (!resulted_answers['cell-groups']) {
     resulted_answers['cell-groups'] = await stack.ask('cell-groups? (can be comma separated)')
     resulted_answers['cell-groups'] = resulted_answers['cell-groups'].split(',').map(v => v.trim())
