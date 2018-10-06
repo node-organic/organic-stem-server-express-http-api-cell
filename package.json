@@ -1,12 +1,12 @@
 {
   "name": "organic-stem-server-express-http-api-cell-template",
   "description": "a stack upgrade for organic-stem with http api cell",
-  "version": "1.0.0",
+  "version": "2.1.0",
   "bin": {
     "organic-stem-server-express-http-api-cell-template": "./index.js"
   },
   "dependencies": {
-    "organic-stack-upgrade": "1.3.0"
+    "organic-stack-upgrade": "^2.0.0"
   },
   "devDependencies": {
     "async-request": "^1.2.0",
@@ -17,8 +17,9 @@
     "eslint-plugin-promise": "^3.7.0",
     "eslint-plugin-standard": "^3.0.1",
     "execa": "^0.10.0",
-    "jest": "^22.4.2",
-    "terminate": "^2.1.0"
+    "jest": "^23.0.0",
+    "terminate": "^2.1.0",
+    "organic-stem-core-template": "github:node-organic/organic-stem-core-template"
   },
   "main": "index.js",
   "scripts": {

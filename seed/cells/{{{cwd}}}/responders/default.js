@@ -14,6 +14,10 @@ module.exports = function (app, dna) {
     if (res.template) {
       return res.render(res.template)
     }
+    if (typeof res.code === 'number') {
+      return res.end()
+    }
+    next() // forward to default not found handler
   })
   // default not found handler
   app.use(function (req, res, next) {
