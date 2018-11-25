@@ -44,5 +44,9 @@ module.exports = function ExpressApp (plasma, dna, next) {
       require(path.join(process.cwd(), responderPath))(app, dna)
     })
   })
-  next(null, app)
+
+  // allows time for other organelles to build and listen for express server chem
+  setTimeout(function () {
+    next(null, app)
+  }, 1)
 }
