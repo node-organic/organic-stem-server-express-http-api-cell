@@ -1,4 +1,3 @@
-const CELL_MODE = process.argv[2]
 const Cell = require('organic-stem-cell')
 
 let cellInstance = new Cell({
@@ -9,5 +8,5 @@ let cellInstance = new Cell({
 if (module.parent) {
   module.exports = cellInstance
 } else {
-  cellInstance.start(CELL_MODE)
+  cellInstance.start()
 }
